@@ -1,17 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// YOU NEED A API KEY FROM GIPHY DEV WEB
+const apiCall = fetch (`http://api.giphy.com/v1/gifs/random?api_key=${process.env.REACT_APP_KEY}`);
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+apiCall
+  .then (res => res.json())
+  .then (({data}) => {
+    const {url} = data.images.original;
+    const img = document.createElement('img');
+    img.src = url;
+    document.body.append(img);
+  })
+  .catch (console.warn)
