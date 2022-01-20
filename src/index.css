@@ -3,5 +3,11 @@
 }
 
 body {
-    padding: 60px;
+  padding: 60px;
+}
+
+input {
+  color: grey;
+  font-size: 1.5rem;
+  width: 100%;
 }
