@@ -1,1 +1,3 @@
 # REACT APP - GIPHY
+
+Giphy API
