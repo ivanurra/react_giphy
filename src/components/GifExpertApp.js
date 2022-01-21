@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { AddCategory } from "./AddCategory";
+import { GifGrid } from "./GifGrid";
 
 const GifExpertApp = () => {
-  const [categories, setCategories] = useState(["item1", "item2", "item3"]);
-
-  // const handleAdd = () => {
-  //   setCategories([...categories, "item4"]);
-  // };
+  const [categories, setCategories] = useState(["Example"]);
 
   return (
     <>
@@ -18,6 +15,7 @@ const GifExpertApp = () => {
           return <li key={category}>{category}</li>;
         })}
       </ol>
+      <GifGrid />
     </>
   );
 };
