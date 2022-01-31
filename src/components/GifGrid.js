@@ -9,7 +9,7 @@ export const GifGrid = ({ category }) => {
   }, []);
 
   const getGifs = async () => {
-    const url = `https://api.giphy.com/v1/gifs/search?limit=10&q=Cats&api_key=${process.env.REACT_APP_API_KEY}`;
+    const url = `https://api.giphy.com/v1/gifs/search?limit=10&q=${category}&api_key=${process.env.REACT_APP_API_KEY}`;
     const resp = await fetch(url);
     const { data } = await resp.json();
 
